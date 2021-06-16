@@ -1,5 +1,8 @@
 package dev.iori.flutter_applovin_max;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.applovin.mediation.MaxAd;
 import com.applovin.mediation.MaxError;
 import com.applovin.mediation.MaxReward;
@@ -10,8 +13,40 @@ import com.applovin.mediation.ads.MaxRewardedAd;
 import io.flutter.Log;
 
 public class RewardedVideo implements MaxRewardedAdListener {
+
     private MaxRewardedAd RewardedAd;
     private int           retryAttempt;
+
+    public RewardedVideo() {
+        super();
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        return super.equals(obj);
+    }
+
+    @NonNull
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+    }
 
     public void Init(String unitId) {
         RewardedAd = MaxRewardedAd.getInstance(unitId, FlutterApplovinMaxPlugin.getInstance().activity );
@@ -56,7 +91,6 @@ public class RewardedVideo implements MaxRewardedAdListener {
         FlutterApplovinMaxPlugin.getInstance().Callback("AdClicked");
     }
 
-    @Override
     public void onAdRevenuePaid(MaxAd ad) {
         FlutterApplovinMaxPlugin.getInstance().Callback("AdRevenuePaid");
     }
